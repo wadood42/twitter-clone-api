@@ -5,6 +5,7 @@ const app = express();
 const authRoutes = require("./routes/auth");
 require("dotenv").config({ path: "./configs/.env" });
 
+const cors = require("cors");
 const PORT = process.env.PORT || 8080;
 
 mongoose
@@ -26,7 +27,7 @@ mongoose
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
+app.use(cors());
 // ROUTES
 
 app.use("/", authRoutes);
