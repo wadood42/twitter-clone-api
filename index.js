@@ -29,13 +29,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // ROUTES
 
-app.use("/hello", (req, res) => {
-  console.log("hello");
-  res.send("Hello");
-});
-
 app.use("/", authRoutes);
-
 app.use("/hello", (req, res) => {
-  res.send("Welcome Abdul");
+  res.send("Hello");
 });

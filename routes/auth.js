@@ -29,4 +29,7 @@ router.post("/login", (req, res) => {
   res.send("THIS IS LOGIN ENDPOINT");
 });
 
+router.get("/profile", (req, res) => {
+  res.status(200).json({ name: "abdul", id: "43453" });
+});
 module.exports = router;
