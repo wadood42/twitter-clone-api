@@ -4,25 +4,28 @@ const User = require("../models/User");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const registerValidation = require("../validations/registerValidation");
-router.post("/register", async (req, res) => {
-  const { errors, isValid } = registerValidation(req.body);
+router.post("/register", (req, res) => {
+  console.log("registering user");
+  // const { errors, isValid } = registerValidation(req.body);
 
-  if (isValid()) {
-    const { username, email, password } = req.body;
-    const salt = await bcrypt.genSalt(10);
-    const hash = await bcrypt.hash(password, salt);
+  // if (isValid()) {
+  //   const { username, email, password } = req.body;
+  //   const salt = await bcrypt.genSalt(10);
+  //   const hash = await bcrypt.hash(password, salt);
 
-    const newUser = new User({
-      username,
-      password: hash,
-      email,
-    });
+  //   const newUser = new User({
+  //     username,
+  //     password: hash,
+  //     email,
+  //   });
 
-    const user = await newUser.save();
-    res.status(200).json(user);
-  } else {
-    console.log("Errors", errors);
-  }
+  // const user = await newUser.save();
+  //   res.status(200).json(newUser);
+  // } else {
+  //   console.log("Errors", errors);
+  // }
+
+  res.status(200).json("success registering");
 });
 
 router.post("/login", (req, res) => {
