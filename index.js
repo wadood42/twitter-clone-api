@@ -30,6 +30,7 @@ app.use(express.urlencoded({ extended: true }));
 // ROUTES
 
 app.use("/hello", (req, res) => {
+  console.log("hello");
   res.send("Hello");
 });
 
