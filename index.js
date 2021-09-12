@@ -1,6 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const nodemon = require("nodemon");
+// const nodemon = require("nodemon");
 const app = express();
 const authRoutes = require("./routes/auth");
 require("dotenv").config({ path: "./configs/.env" });
