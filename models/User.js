@@ -10,6 +10,10 @@ const userSchema = new Schema(
       max: [20, "Too long"],
       unique: [true, "Username is taken"],
     },
+    date_of_birth: {
+      type: String,
+      required: true,
+    },
 
     password: {
       type: String,
@@ -19,6 +23,7 @@ const userSchema = new Schema(
     email: {
       type: String,
       required: true,
+      unique: true,
     },
     profilePicture: {
       type: String,

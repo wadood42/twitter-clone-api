@@ -21,6 +21,24 @@ const registerValidation = function (data) {
     errors.password = "Password should be at least 6 characters";
   }
 
+  if (validator.isEmpty(data.firstname)) {
+    errors.firstname = "Firstname is requied";
+  }
+
+  if (validator.isEmpty(data.lastname)) {
+    errors.lastname = "Lastname is missing";
+  }
+
+  if (validator.isEmpty(data.dateOfBirth.day)) {
+    errors.day = "day is missing from date of birth";
+  }
+  if (validator.isEmpty(data.dateOfBirth.month)) {
+    errors.month = "month is missing from date of birth";
+  }
+  if (validator.isEmpty(data.dateOfBirth.year)) {
+    errors.year = "year is missing from date of birth";
+  }
+
   return {
     errors,
     isValid: () => Object.keys(errors).length === 0,
